@@ -23,7 +23,7 @@ public class User {
 	private String name;
 	private Set<Authority> authorities = new HashSet<>();
 
-	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy="user")
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "user")
 	public Set<Authority> getAuthorities() {
 		return authorities;
 	}
@@ -64,5 +64,11 @@ public class User {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", username=" + username + ", password=" + password + ", name=" + name
+				+ ", authorities=" + authorities + "]";
 	}
 }
